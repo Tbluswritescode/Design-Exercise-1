@@ -14,7 +14,7 @@ public class QuarantineList {
 
     private boolean isInList(Person p) {
         for (int i = 0; i < qList.size(); i++) {
-            if (p.getID().replaceAll("\\s+", "") == qList.get(i).getID().replaceAll("\\s+", "")) {
+            if (p.getID() == qList.get(i).getID()) {
                 return true;
             }
         }
@@ -29,19 +29,24 @@ public class QuarantineList {
         return false;
     }
 
-    public void inputUser(Scanner scan) {
-        System.out.println("\nEnter the user's name: \n");
-        String name = scan.next();
-        System.out.println("\nEnter the user's unique ID: \n");
-        String ID = scan.next();
-        Person newPerson = new Person(name, ID);
-
-        if (this.addToList(newPerson)) {
-            System.out.println("\nsuccessfully added to list!");
-        } else {
-            System.out.println("\nunable to place person in list, ID may not be unique.");
-        }
-    }
+    /*
+     * OUTDATED CODE MEANT FOR FRONT END INTERACTION
+     * 
+     * public void inputUser(Scanner scan) {
+     * System.out.println("\nEnter the user's name: \n");
+     * String name = scan.next();
+     * System.out.println("\nEnter the user's unique ID: \n");
+     * String ID = scan.next();
+     * Person newPerson = new Person(name, ID, );
+     * 
+     * if (this.addToList(newPerson)) {
+     * System.out.println("\nsuccessfully added to list!");
+     * } else {
+     * System.out.println("\nunable to place person in list, ID may not be
+     * unique.");
+     * }
+     * }
+     */
 
     public String toString() {
         String str = "";

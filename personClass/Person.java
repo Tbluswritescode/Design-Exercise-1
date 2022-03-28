@@ -3,11 +3,11 @@ package personClass;
 import java.time.LocalDateTime;
 
 public class Person {
-    String uniqueID;
+    int uniqueID;
     LocalDateTime contactDate;
     String name;
 
-    public Person(String name, String id) {
+    public Person(String name, int id, LocalDateTime contactDate) {
         this.uniqueID = id;
         this.contactDate = LocalDateTime.now();
         this.name = name;
@@ -17,7 +17,7 @@ public class Person {
         return String.format("%s\nid:: %s\nContact Date: %s", name, uniqueID, contactDate);
     }
 
-    public String getID() {
+    public int getID() {
         return this.uniqueID;
     }
 
